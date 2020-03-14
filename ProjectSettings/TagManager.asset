@@ -3,7 +3,8 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Enemy
   layers:
   - Default
   - TransparentFX
@@ -17,7 +18,7 @@ TagManager:
   - Player
   - Background
   - Collectibles
-  - 
+  - Enemy
   - 
   - 
   - 
@@ -49,6 +50,9 @@ TagManager:
     locked: 0
   - name: Foreground
     uniqueID: 578740429
+    locked: 0
+  - name: Water
+    uniqueID: 1198708125
     locked: 0
   - name: Collectables
     uniqueID: 620278593

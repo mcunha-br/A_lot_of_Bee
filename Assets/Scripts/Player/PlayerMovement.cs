@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -12,6 +10,7 @@ public class PlayerMovement : MonoBehaviour
 	private BoxCollider2D _feetCollider;
 	private Animator _animator;
 	private LayerMask _foregroundLayerMask;
+	private LayerMask _waterLayerMask;
 
 	// Start is called before the first frame update
     void Start()
@@ -20,6 +19,7 @@ public class PlayerMovement : MonoBehaviour
         _feetCollider = GetComponent<BoxCollider2D>();
         _animator = GetComponent<Animator>();
         _foregroundLayerMask = 1 << LayerMask.NameToLayer("Foreground");
+        _waterLayerMask = 1 << LayerMask.NameToLayer("Water");
     }
 
     // Update is called once per frame
@@ -38,16 +38,16 @@ public class PlayerMovement : MonoBehaviour
 
 	private void Jump()
 	{
-		if (Input.GetKeyDown(KeyCode.Space) && _feetCollider.IsTouchingLayers(_foregroundLayerMask))
+		if (Input.GetKeyDown(KeyCode.Space) && (_feetCollider.IsTouchingLayers(_foregroundLayerMask) || _feetCollider.IsTouchingLayers(_waterLayerMask)))
 		{
-			Vector2 newVerticalVelocity = new Vector2(0f, jumpSpeed);
+			var newVerticalVelocity = new Vector2(0f, jumpSpeed);
 			_rigidBody.velocity = newVerticalVelocity;
 		}
 	}
 
 	private void FlipSprite()
 	{
-		bool hasHorizontalSpeed = Mathf.Abs(_rigidBody.velocity.x) > Mathf.Epsilon;
+		var hasHorizontalSpeed = Mathf.Abs(_rigidBody.velocity.x) > Mathf.Epsilon;
 		if (hasHorizontalSpeed)
 		{
 			transform.localScale = new Vector2(Mathf.Sign(_rigidBody.velocity.x), 1f);
@@ -56,14 +56,7 @@ public class PlayerMovement : MonoBehaviour
 
 	private void UpdateAnimation()
 	{
-		bool hasHorizontalSpeed = Mathf.Abs(_rigidBody.velocity.x) > Mathf.Epsilon;
-		if (hasHorizontalSpeed)
-		{
-			_animator.SetBool("isRunning", true);
-		}
-		else
-		{
-			_animator.SetBool("isRunning", false);
-		}
+		var hasHorizontalSpeed = Mathf.Abs(_rigidBody.velocity.x) > Mathf.Epsilon;
+		_animator.SetBool("isRunning", hasHorizontalSpeed);
 	}
 }
