@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
@@ -21,6 +22,24 @@ public class PlayerController : MonoBehaviour
 
     private void HandleHit()
     {
-        _animator.SetBool("isHit", _collider.IsTouchingLayers(LayerMask.GetMask("Enemy")));
+        if (_collider.IsTouchingLayers(LayerMask.GetMask("Enemy")))
+        {
+            _animator.SetBool("isHit", true);
+            GetComponent<HealthSystem>().DecreaseHealth();
+            DisableCollider();
+            Invoke(nameof(EnableCollider), 2f);
+        }
+        
+    }
+
+    private void DisableCollider()
+    {
+        _collider.enabled = false;
+    }
+
+    private void EnableCollider()
+    {
+        _collider.enabled = true;
+        _animator.SetBool("isHit", false);
     }
 }

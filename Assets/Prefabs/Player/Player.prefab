@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1161336588794269851}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.496, y: -0.161, z: 0}
+  m_LocalPosition: {x: 0.416, y: -0.174, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 9186838004757330169}
@@ -46,6 +46,8 @@ GameObject:
   - component: {fileID: 9186838004757330173}
   - component: {fileID: 9186838004757330174}
   - component: {fileID: 1415195597}
+  - component: {fileID: 4032261709518883412}
+  - component: {fileID: 8965709492616203967}
   m_Layer: 9
   m_Name: Player
   m_TagString: Player
@@ -226,3 +228,35 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14a129069c4c16f429da30cc027649e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &4032261709518883412
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9186838004757330167}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd91ef94933e3014c8d0bf123f718f00, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _firePoint: {fileID: 8597299653688741941}
+  _projectile: {fileID: 5604152871150154485, guid: 23667c5af969a8743ad730e00207fc2b,
+    type: 3}
+--- !u!114 &8965709492616203967
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9186838004757330167}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7049548299be6014e8d276bcf902a900, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lifes: 3
+  hearts:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}

@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -11,6 +12,10 @@ public class PlayerMovement : MonoBehaviour
 	private Animator _animator;
 	private LayerMask _foregroundLayerMask;
 	private LayerMask _waterLayerMask;
+
+	// Controles pra evitar que o personagem fique rodando infinitamente.
+	private bool _isAlreadyFacingRight = true;
+	private bool _isAlreadyFacingLeft = false;
 
 	// Start is called before the first frame update
     void Start()
@@ -30,15 +35,20 @@ public class PlayerMovement : MonoBehaviour
 	    FlipSprite();
 	    UpdateAnimation();
     }
-	
-	private void Run() {
+
+    private void FixedUpdate()
+    {
+	    
+    }
+
+    private void Run() {
 		Vector2 newHorizontalVelocity = new Vector2(Input.GetAxisRaw("Horizontal") * runSpeed, _rigidBody.velocity.y);
 		_rigidBody.velocity = newHorizontalVelocity;
 	}
 
 	private void Jump()
 	{
-		if (Input.GetKeyDown(KeyCode.Space) && (_feetCollider.IsTouchingLayers(_foregroundLayerMask) || _feetCollider.IsTouchingLayers(_waterLayerMask)))
+		if (Input.GetButtonDown("Jump") && (_feetCollider.IsTouchingLayers(_foregroundLayerMask) || _feetCollider.IsTouchingLayers(_waterLayerMask)))
 		{
 			var newVerticalVelocity = new Vector2(0f, jumpSpeed);
 			_rigidBody.velocity = newVerticalVelocity;
@@ -48,9 +58,20 @@ public class PlayerMovement : MonoBehaviour
 	private void FlipSprite()
 	{
 		var hasHorizontalSpeed = Mathf.Abs(_rigidBody.velocity.x) > Mathf.Epsilon;
+		var isFacingRight = Mathf.Sign(Input.GetAxisRaw("Horizontal")) > 0f;
 		if (hasHorizontalSpeed)
 		{
-			transform.localScale = new Vector2(Mathf.Sign(_rigidBody.velocity.x), 1f);
+			if (isFacingRight && !_isAlreadyFacingRight)
+			{
+				transform.Rotate(0f, 180f, 0f);
+				_isAlreadyFacingLeft = false;
+				_isAlreadyFacingRight = true;
+			} else if (!isFacingRight && !_isAlreadyFacingLeft)
+			{
+				transform.Rotate(0f, 180f, 0f);
+				_isAlreadyFacingLeft = true;
+				_isAlreadyFacingRight = false;
+			}
 		}
 	}
 
