@@ -9,6 +9,7 @@ public class PlayerMovement : MonoBehaviour
 	private Rigidbody2D _rigidBody;
 	private BoxCollider2D _feetCollider;
 	private Animator _animator;
+	private HealthSystem _healthSystem;
 	private LayerMask _foregroundLayerMask;
 	private LayerMask _waterLayerMask;
 
@@ -22,6 +23,7 @@ public class PlayerMovement : MonoBehaviour
         _rigidBody = GetComponent<Rigidbody2D>();
         _feetCollider = GetComponent<BoxCollider2D>();
         _animator = GetComponent<Animator>();
+        _healthSystem = GetComponent<HealthSystem>();
         _foregroundLayerMask = 1 << LayerMask.NameToLayer("Foreground");
         _waterLayerMask = 1 << LayerMask.NameToLayer("Water");
     }
@@ -29,6 +31,10 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+	    if (!_healthSystem.IsAlive())
+	    {
+		    return;
+	    }
 	    Run();
 	    Jump();
 	    FlipSprite();

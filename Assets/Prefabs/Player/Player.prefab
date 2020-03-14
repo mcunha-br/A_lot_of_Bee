@@ -152,7 +152,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   runSpeed: 5
-  jumpSpeed: 7
+  jumpSpeed: 6
 --- !u!50 &9186838004757330172
 Rigidbody2D:
   serializedVersion: 4
