@@ -13,7 +13,7 @@ public class SpawnManager : MonoBehaviour {
 
     public EnemyType enemy;
 
-    IEnumerator Start() {
+    private IEnumerator Start() {
         yield return new WaitForSeconds(0.1f);
         GetEnemySpawn();
 
@@ -63,8 +63,4 @@ public class SpawnManager : MonoBehaviour {
                 enemy.startFollowPlayer = true;
         }
     }
-
-
-    //public void FollowPlayer() {
-    //}
 }
