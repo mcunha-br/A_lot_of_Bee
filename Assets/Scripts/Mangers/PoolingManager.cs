@@ -11,11 +11,11 @@ public class PoolingManager : MonoBehaviour {
     public GameObject ghost;
     public int amount;
 
-    private List<GameObject> bees = new List<GameObject>();
-    private List<GameObject> chickens = new List<GameObject>();
-    private List<GameObject> snakes = new List<GameObject>();
-    private List<GameObject> scorpions = new List<GameObject>();
-    private List<GameObject> ghosts = new List<GameObject>();
+    private static List<GameObject> bees = new List<GameObject>();
+    private static List<GameObject> chickens = new List<GameObject>();
+    private static List<GameObject> snakes = new List<GameObject>();
+    private static List<GameObject> scorpions = new List<GameObject>();
+    private static List<GameObject> ghosts = new List<GameObject>();
 
 
 
@@ -37,16 +37,16 @@ public class PoolingManager : MonoBehaviour {
     }
 
 
-    public GameObject GetBee() {
+    public static GameObject GetBee() {
         foreach (var bee in bees) {
-            if (!bee.activeInHierarchy)
+            if (!bee.activeInHierarchy) 
                 return bee;
         }
         return null;
     }
 
 
-    public GameObject GetChiken() {
+    public static GameObject GetChiken() {
         foreach (var chiken in chickens) {
             if (!chiken.activeInHierarchy)
                 return chiken;
@@ -55,7 +55,7 @@ public class PoolingManager : MonoBehaviour {
     }
 
 
-    public GameObject GetSnake() {
+    public static GameObject GetSnake() {
         foreach (var snake in snakes) {
             if (!snake.activeInHierarchy)
                 return snake;
@@ -64,7 +64,7 @@ public class PoolingManager : MonoBehaviour {
     }
 
 
-    public GameObject GetScorpion() {
+    public static GameObject GetScorpion() {
         foreach (var scopion in scorpions) {
             if (!scopion.activeInHierarchy)
                 return scopion;
@@ -73,7 +73,7 @@ public class PoolingManager : MonoBehaviour {
     }
 
 
-    public GameObject GetGhost() {
+    public static GameObject GetGhost() {
         foreach (var ghost in ghosts) {
             if (!ghost.activeInHierarchy)
                 return ghost;
