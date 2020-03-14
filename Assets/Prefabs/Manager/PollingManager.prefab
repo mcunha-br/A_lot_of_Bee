@@ -1,0 +1,52 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &3760627285525323667
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3760627285525323665}
+  - component: {fileID: 3760627285525323664}
+  m_Layer: 0
+  m_Name: PollingManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3760627285525323665
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3760627285525323667}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3760627285525323664
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3760627285525323667}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94804d8ff63c3f64b8950f667bc33c59, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bee: {fileID: 1932326659686735261, guid: 5f4ff198cee2be445b403a2b235dbd51, type: 3}
+  chicken: {fileID: 2322572107770073551, guid: dd7b4c045bd4f1c48a894f84dce54307, type: 3}
+  snake: {fileID: 706990513071594240, guid: a34ffc18b10b6fb4494d599aa4a022ca, type: 3}
+  scorpion: {fileID: 6413298759549145693, guid: 2dff39f26171bc04e95ffd832977caa5,
+    type: 3}
+  ghost: {fileID: 6345485630935327709, guid: ff38ff0c8774a374085c931e075d6cdb, type: 3}
+  amount: 50
