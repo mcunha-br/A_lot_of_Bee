@@ -21,6 +21,10 @@ public class HealthSystem : MonoBehaviour
                 _isDead = true;
             }
         }
-        
+    }
+
+    public bool IsAlive()
+    {
+        return !_isDead;
     }
 }

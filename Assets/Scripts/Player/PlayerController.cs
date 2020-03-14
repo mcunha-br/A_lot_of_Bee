@@ -3,10 +3,13 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    
     private SpriteRenderer _spriteRenderer;
     private CapsuleCollider2D _collider;
     private HealthSystem _healthSystem;
+    private Rigidbody2D _rigidBody;
+    private Animator _animator;
+
+    private bool _isAlive = true;
     
     // Start is called before the first frame update
     void Start()
@@ -14,12 +17,18 @@ public class PlayerController : MonoBehaviour
         _collider = GetComponent<CapsuleCollider2D>();
         _spriteRenderer = GetComponent<SpriteRenderer>();
         _healthSystem = GetComponent<HealthSystem>();
+        _rigidBody = GetComponent<Rigidbody2D>();
+        _animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        HandleHit();
+        if (_isAlive)
+        {
+            HandleHit();
+            Die();   
+        }
     }
 
     private void HandleHit()
@@ -33,6 +42,19 @@ public class PlayerController : MonoBehaviour
             Invoke(nameof(EnableCollider), 2f);
         }
         
+    }
+
+    private void Die()
+    {
+        if (!_healthSystem.IsAlive())
+        {
+            _isAlive = false;
+            // Adiciona uma morte mais dramática.
+            _rigidBody.velocity = new Vector2(5f, 5f);
+            transform.Rotate(0f, 0f, 90f);
+            // TODO Aqui deveria ser um estado na máquina de estados.
+            _animator.enabled = false;
+        }
     }
 
     private IEnumerator BlinkPlayer() {
