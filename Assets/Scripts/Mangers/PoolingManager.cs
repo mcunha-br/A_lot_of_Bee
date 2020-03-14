@@ -22,31 +22,12 @@ public class PoolingManager : MonoBehaviour {
 
 
     private void Start() {
-
-        //allEnemys.Add(bees);
-        //allEnemys.Add(chickens);
-        //allEnemys.Add(snakes);
-        //allEnemys.Add(scorpions);
-        //allEnemys.Add(ghosts);
-
-
         InstantiateEnemy(bees, bee, amount);
         InstantiateEnemy(chickens, chicken, amount);
         InstantiateEnemy(snakes, snake, amount);
         InstantiateEnemy(scorpions, scorpion, amount);
         InstantiateEnemy(ghosts, ghost, amount);
     }
-
-
-    //private void SpawnAllEnemys() {
-
-    //    foreach (var item in allEnemys) {
-    //        InstantiateEnemy(item, )
-    //    }
-    //    for (int i = 0; i < allEnemys.Count; i++) {
-    //        InstantiateEnemy(i.)
-    //    }
-    //}
 
 
     private void InstantiateEnemy(List<GameObject> list, GameObject enemy, int amount) {
