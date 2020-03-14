@@ -9,18 +9,16 @@ public class Shoot : MonoBehaviour {
     }
 
     private void OnTriggerEnter2D(Collider2D collision) {
-        if (!collision.CompareTag("Player")) {
-            if (collision.name != "Background") {
+        if (!collision.CompareTag("Player"))
                 Destroy(gameObject);
-            }
-        }
+
+        
 
         if (collision.CompareTag("Enemy")) {
             collision.GetComponent<EnemyBase>().ApplyDamage(strong);
             Destroy(gameObject);
-        } else if (collision.gameObject.name.Equals("Foreground"))
-        {
-            Destroy(gameObject);
         }
+
+        Debug.Log(collision.name);
     }
 }

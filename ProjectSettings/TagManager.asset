@@ -19,7 +19,7 @@ TagManager:
   - Background
   - Collectibles
   - Enemy
-  - OutMapCollider
+  - Confiner
   - 
   - 
   - 
@@ -51,11 +51,11 @@ TagManager:
   - name: Foreground
     uniqueID: 578740429
     locked: 0
-  - name: Enemy
-    uniqueID: 895453075
-    locked: 0
   - name: Water
     uniqueID: 1198708125
+    locked: 0
+  - name: Enemy
+    uniqueID: 3651273269
     locked: 0
   - name: Collectables
     uniqueID: 620278593

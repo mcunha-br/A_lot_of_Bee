@@ -20,7 +20,6 @@ public abstract class EnemyBase : MonoBehaviour {
     protected Rigidbody2D body;
     protected Animator anim;
     protected SpriteRenderer rend;
-    protected AudioSource source;
     protected Transform target;
     protected float currentHealth;
 
@@ -53,17 +52,17 @@ public abstract class EnemyBase : MonoBehaviour {
         currentHealth -= damage;
 
         if (currentHealth <= 0) {
-            //source.PlayOneShot(sfxDeath);
-            gameObject.SetActive(false);
-            currentHealth = health;
+            //SoundManager.PlaySound(sfxDeath);
             OnDeath();
-
+            gameObject.SetActive(false);
         } else
-            StartCoroutine("BlinkEnemy");  
+            StartCoroutine("BlinkEnemy");
+
+        Debug.Log(currentHealth);
     }
 
     protected IEnumerator BlinkEnemy() {
-        //source.PlayOneShot(sfxHit);
+        //SoundManager.PlaySound(sfxHit);
         OnDamage();
 
         rend.color = Color.red;
