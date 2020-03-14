@@ -46,7 +46,7 @@ public class PlayerController : MonoBehaviour
 
     private void Die()
     {
-        if (!_healthSystem.IsAlive())
+        if (!_healthSystem.IsAlive() || _collider.IsTouchingLayers(LayerMask.GetMask("OutMapCollider")))
         {
             _isAlive = false;
             // Adiciona uma morte mais dramática.
@@ -54,6 +54,8 @@ public class PlayerController : MonoBehaviour
             transform.Rotate(0f, 0f, 90f);
             // TODO Aqui deveria ser um estado na máquina de estados.
             _animator.enabled = false;
+            // Carrega a tela de "Game Over".
+            FindObjectOfType<UIManager>().LoadDeathScreen();
         }
     }
 

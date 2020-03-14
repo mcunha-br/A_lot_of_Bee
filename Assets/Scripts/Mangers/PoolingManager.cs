@@ -34,7 +34,7 @@ public class PoolingManager : MonoBehaviour {
         for (int i = 0; i < amount; i++) {
             var tempEnemy = Instantiate(enemy, transform);
             tempEnemy.SetActive(false);
-            tempEnemy.GetComponent<SpriteRenderer>().sortingLayerName = "Collectables";
+            tempEnemy.GetComponent<SpriteRenderer>().sortingLayerName = "Enemy";
             list.Add(tempEnemy);
         }
 

@@ -8,13 +8,7 @@ public class GunShoot : MonoBehaviour
 
     private float _force = 10f;
     private float _fireRate = 1f;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
+    
     // Update is called once per frame
     void Update()
     {
@@ -25,7 +19,7 @@ public class GunShoot : MonoBehaviour
     {
         if (Input.GetButtonDown("Fire1"))
         {
-            GameObject bullet = Instantiate(_projectile, _firePoint.position, Quaternion.identity);
+            var bullet = Instantiate(_projectile, _firePoint.position, Quaternion.identity);
             var bulletRigidBody = bullet.GetComponent<Rigidbody2D>();
             bulletRigidBody.AddForce(_firePoint.right * _force, ForceMode2D.Impulse);
         }
