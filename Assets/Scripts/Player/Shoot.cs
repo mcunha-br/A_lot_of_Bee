@@ -8,6 +8,9 @@ public class Shoot : MonoBehaviour {
         if(collision.CompareTag("Enemy")) {
             collision.GetComponent<EnemyBase>().ApplyDamage(strong);
             Destroy(gameObject);
+        } else if (collision.gameObject.name.Equals("Foreground"))
+        {
+            Destroy(gameObject);
         }
     }
 }
