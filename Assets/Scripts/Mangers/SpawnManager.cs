@@ -12,7 +12,6 @@ public enum EnemyType {
 public class SpawnManager : MonoBehaviour {
 
     public EnemyType enemy;
-
     IEnumerator Start() {
         yield return new WaitForSeconds(0.1f);
         GetEnemySpawn();
