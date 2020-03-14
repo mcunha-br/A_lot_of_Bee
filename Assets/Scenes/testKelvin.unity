@@ -7971,7 +7971,7 @@ PrefabInstance:
         type: 3}
       propertyPath: hearts.Array.data[0]
       value: 
-      objectReference: {fileID: 919321173}
+      objectReference: {fileID: 1953850486}
     - target: {fileID: 8965709492616203967, guid: da4af3b30fe7311449a897047edfe81e,
         type: 3}
       propertyPath: hearts.Array.data[1]

@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class GunShoot : MonoBehaviour
 {
@@ -10,8 +8,7 @@ public class GunShoot : MonoBehaviour
 
     private float _force = 10f;
     private float _fireRate = 1f;
-    private float _cooldownToNextShoot;
-    
+
     // Start is called before the first frame update
     void Start()
     {
@@ -31,7 +28,6 @@ public class GunShoot : MonoBehaviour
             GameObject bullet = Instantiate(_projectile, _firePoint.position, Quaternion.identity);
             var bulletRigidBody = bullet.GetComponent<Rigidbody2D>();
             bulletRigidBody.AddForce(_firePoint.right * _force, ForceMode2D.Impulse);
-            _cooldownToNextShoot = Time.deltaTime + _fireRate;
         }
     }
 }

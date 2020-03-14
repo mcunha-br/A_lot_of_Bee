@@ -1,5 +1,4 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -35,12 +34,7 @@ public class PlayerMovement : MonoBehaviour
 	    FlipSprite();
 	    UpdateAnimation();
     }
-
-    private void FixedUpdate()
-    {
-	    
-    }
-
+    
     private void Run() {
 		Vector2 newHorizontalVelocity = new Vector2(Input.GetAxisRaw("Horizontal") * runSpeed, _rigidBody.velocity.y);
 		_rigidBody.velocity = newHorizontalVelocity;
