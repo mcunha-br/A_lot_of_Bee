@@ -730,6 +730,21 @@ PrefabInstance:
       propertyPath: enemy
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1219887687499984859, guid: 3cb62e7e67d213843ac1aac5436867d9,
+        type: 3}
+      propertyPath: m_SortingLayerID
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1219887687499984859, guid: 3cb62e7e67d213843ac1aac5436867d9,
+        type: 3}
+      propertyPath: m_SortingLayer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1219887687499984859, guid: 3cb62e7e67d213843ac1aac5436867d9,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1219887687499984862, guid: 3cb62e7e67d213843ac1aac5436867d9,
         type: 3}
       propertyPath: m_Name
