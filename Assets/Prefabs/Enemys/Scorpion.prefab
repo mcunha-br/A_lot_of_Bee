@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 8196118421416849268}
   - component: {fileID: 5177900725429723519}
   - component: {fileID: 3633579408622448170}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Scorpion
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -90,8 +90,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 620278593
+  m_SortingLayer: 5
   m_SortingOrder: 0
   m_Sprite: {fileID: 2874428090468322930, guid: 7ec388f762f76a844a60fd8ca2782e2a,
     type: 3}
