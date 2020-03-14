@@ -51,4 +51,20 @@ public class SpawnManager : MonoBehaviour {
         enemy.transform.position = transform.position;
         enemy.SetActive(true);
     }
+
+
+    private void OnEnable() {
+        var enemys = FindObjectsOfType<EnemyBase>();
+
+        foreach (var enemy in enemys) {
+            var distance = Vector2.Distance(transform.position, enemy.transform.position);
+
+            if (distance <= 3)
+                enemy.startFollowPlayer = true;
+        }
+    }
+
+
+    //public void FollowPlayer() {
+    //}
 }

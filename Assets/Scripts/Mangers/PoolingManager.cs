@@ -17,15 +17,36 @@ public class PoolingManager : MonoBehaviour {
     private static List<GameObject> scorpions = new List<GameObject>();
     private static List<GameObject> ghosts = new List<GameObject>();
 
+    private static List<List<GameObject>> allEnemys = new List<List<GameObject>>();
+
 
 
     private void Start() {
+
+        //allEnemys.Add(bees);
+        //allEnemys.Add(chickens);
+        //allEnemys.Add(snakes);
+        //allEnemys.Add(scorpions);
+        //allEnemys.Add(ghosts);
+
+
         InstantiateEnemy(bees, bee, amount);
         InstantiateEnemy(chickens, chicken, amount);
         InstantiateEnemy(snakes, snake, amount);
         InstantiateEnemy(scorpions, scorpion, amount);
         InstantiateEnemy(ghosts, ghost, amount);
     }
+
+
+    //private void SpawnAllEnemys() {
+
+    //    foreach (var item in allEnemys) {
+    //        InstantiateEnemy(item, )
+    //    }
+    //    for (int i = 0; i < allEnemys.Count; i++) {
+    //        InstantiateEnemy(i.)
+    //    }
+    //}
 
 
     private void InstantiateEnemy(List<GameObject> list, GameObject enemy, int amount) {
@@ -35,6 +56,8 @@ public class PoolingManager : MonoBehaviour {
             tempEnemy.GetComponent<SpriteRenderer>().sortingLayerName = "Collectables";
             list.Add(tempEnemy);
         }
+
+        allEnemys.Add(list);
     }
 
 
@@ -80,5 +103,13 @@ public class PoolingManager : MonoBehaviour {
                 return ghost;
         }
         return null;
+    }
+
+    public static void InWater(bool inWater) {
+        foreach (var item in allEnemys) {
+            foreach (var enemy in item) {
+                enemy.GetComponent<EnemyBase>().inWater = inWater;
+            }
+        }
     }
 }

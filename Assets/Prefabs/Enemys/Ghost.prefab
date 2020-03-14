@@ -9,10 +9,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6345485630935327696}
+  - component: {fileID: 1333204235965895819}
   - component: {fileID: 6345485630935327699}
   - component: {fileID: 6345485630935327698}
-  - component: {fileID: -3410075567353229716}
-  m_Layer: 0
+  - component: {fileID: 6152912728247092071}
+  - component: {fileID: 1721429765204912209}
+  m_Layer: 12
   m_Name: Ghost
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -33,6 +35,25 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1333204235965895819
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6345485630935327709}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48541143e7fbc3d428550a7ad63625f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 1
+  strong: 1
+  health: 3
+  startFollowPlayer: 1
+  sfxHit: {fileID: 0}
+  sfxAttack: {fileID: 0}
+  sfxDeath: {fileID: 0}
 --- !u!212 &6345485630935327699
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -69,8 +90,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 620278593
+  m_SortingLayer: 5
   m_SortingOrder: 0
   m_Sprite: {fileID: -3936525737672514814, guid: 7ec388f762f76a844a60fd8ca2782e2a,
     type: 3}
@@ -103,21 +124,40 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &-3410075567353229716
-MonoBehaviour:
+--- !u!70 &6152912728247092071
+CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6345485630935327709}
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3ed374da1e3df7947bf161b7bf8d4f21, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 1
-  strong: 0
-  health: 3
-  sfxWalk: {fileID: 0}
-  sfxAttack: {fileID: 0}
-  sfxDeath: {fileID: 0}
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.007940829, y: -0.08933425}
+  m_Size: {x: 0.23768008, y: 0.78956795}
+  m_Direction: 0
+--- !u!50 &1721429765204912209
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6345485630935327709}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1000
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 0
+  m_CollisionDetection: 0
+  m_Constraints: 4
