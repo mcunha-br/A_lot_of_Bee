@@ -12,9 +12,10 @@ GameObject:
   - component: {fileID: 1932326659686735263}
   - component: {fileID: 1932326659686735260}
   - component: {fileID: 3948894490743261929}
-  m_Layer: 0
+  - component: {fileID: 4415657393361322082}
+  m_Layer: 12
   m_Name: Bee
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -47,7 +48,6 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -118,6 +118,41 @@ MonoBehaviour:
   speed: 1
   strong: 0
   health: 3
+  startFollowPlayer: 1
   sfxWalk: {fileID: 0}
   sfxAttack: {fileID: 0}
   sfxDeath: {fileID: 0}
+--- !u!60 &4415657393361322082
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1932326659686735261}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.12724924, y: 0.16417983}
+      - {x: -0.15596981, y: 0.1682508}
+      - {x: -0.3511497, y: 0.2562748}
+      - {x: -0.21018302, y: -0.21855009}
+      - {x: -0.09706074, y: -0.3409854}
+      - {x: 0.15766883, y: -0.23583052}
+      - {x: 0.21787721, y: -0.177241}
+      - {x: 0.3741964, y: 0.14247599}
+      - {x: 0.20825706, y: 0.353673}
