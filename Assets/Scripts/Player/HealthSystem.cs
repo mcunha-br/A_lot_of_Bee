@@ -27,4 +27,9 @@ public class HealthSystem : MonoBehaviour
     {
         return !_isDead;
     }
+
+    public void SetPlayerIsDead(bool isPlayerDead)
+    {
+        this._isDead = isPlayerDead;
+    }
 }

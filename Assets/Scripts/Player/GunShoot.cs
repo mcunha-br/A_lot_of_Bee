@@ -5,10 +5,18 @@ public class GunShoot : MonoBehaviour
 
     [SerializeField] private Transform _firePoint;
     [SerializeField] private GameObject _projectile;
-
-    private float _force = 10f;
-    private float _fireRate = 1f;
+    [SerializeField] private AudioClip _gunSoundEffect;
     
+    private float _force = 10f;
+
+    private HealthSystem _healthSystem;
+
+    // Start is called before the first frame update
+    private void Start()
+    {
+        _healthSystem = GetComponent<HealthSystem>();
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -17,11 +25,12 @@ public class GunShoot : MonoBehaviour
 
     private void Shoot()
     {
-        if (Input.GetButtonDown("Fire1"))
+        if (_healthSystem.IsAlive() && Input.GetButtonDown("Fire1"))
         {
             var bullet = Instantiate(_projectile, _firePoint.position, Quaternion.identity);
             var bulletRigidBody = bullet.GetComponent<Rigidbody2D>();
             bulletRigidBody.AddForce(_firePoint.right * _force, ForceMode2D.Impulse);
+            SoundManager.PlaySound(_gunSoundEffect);
         }
     }
 }
