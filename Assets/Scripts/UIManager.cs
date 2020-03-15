@@ -14,6 +14,11 @@ public class UIManager : MonoBehaviour
         Application.Quit();
     }
 
+    public void LoadWinScene()
+    {
+        SceneManager.LoadScene(3);
+    }
+
     public void LoadDeathScreen()
     {
         StartCoroutine(WaitAndLoad());
