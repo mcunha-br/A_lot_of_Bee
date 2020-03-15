@@ -23,6 +23,11 @@ public class UIManager : MonoBehaviour
     {
         StartCoroutine(WaitAndLoad());
     }
+    
+    public void LoadFailScene()
+    {
+        SceneManager.LoadScene(4);
+    }
 
     private IEnumerator WaitAndLoad()
     {

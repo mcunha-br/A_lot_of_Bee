@@ -14,6 +14,8 @@ public class EnemyHouse : EnemyBase {
     }
 
     protected override void OnDeath() {
+        // Sempre que um ninho é destruído, atualizamos o placar.
+        FindObjectOfType<ScoreManager>().IncreaseDestroyedNests();
         Destroy(gameObject);
     }
 
