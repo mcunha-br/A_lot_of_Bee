@@ -153,7 +153,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   runSpeed: 5
-  jumpSpeed: 6
+  jumpSpeed: 8
+  jumpEffect: {fileID: 8300000, guid: edebf3db781cf3042b45c5002e17c3da, type: 3}
 --- !u!50 &9186838004757330172
 Rigidbody2D:
   serializedVersion: 4
@@ -244,6 +245,7 @@ MonoBehaviour:
   _firePoint: {fileID: 8597299653688741941}
   _projectile: {fileID: 5604152871150154485, guid: 23667c5af969a8743ad730e00207fc2b,
     type: 3}
+  _gunSoundEffect: {fileID: 8300000, guid: 52ee790e09dbc2049b2124397ef62b3f, type: 3}
 --- !u!114 &8965709492616203967
 MonoBehaviour:
   m_ObjectHideFlags: 0

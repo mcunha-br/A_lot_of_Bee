@@ -5,6 +5,7 @@ public class PlayerMovement : MonoBehaviour
 
 	[SerializeField] private float runSpeed = 5f;
 	[SerializeField] private float jumpSpeed = 5f;
+	[SerializeField] private AudioClip jumpEffect;
 	
 	private Rigidbody2D _rigidBody;
 	private BoxCollider2D _feetCollider;
@@ -35,6 +36,7 @@ public class PlayerMovement : MonoBehaviour
 	    {
 		    return;
 	    }
+	    
 	    Run();
 	    Jump();
 	    FlipSprite();
@@ -52,6 +54,7 @@ public class PlayerMovement : MonoBehaviour
 		{
 			var newVerticalVelocity = new Vector2(0f, jumpSpeed);
 			_rigidBody.velocity = newVerticalVelocity;
+			SoundManager.PlaySound(jumpEffect);
 		}
 	}
 

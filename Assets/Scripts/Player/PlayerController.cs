@@ -24,11 +24,10 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (_isAlive)
-        {
-            HandleHit();
-            Die();   
-        }
+        if (!_healthSystem.IsAlive()) return;
+        
+        HandleHit();
+        Die();
     }
 
     private void HandleHit()
@@ -48,7 +47,7 @@ public class PlayerController : MonoBehaviour
     {
         if (!_healthSystem.IsAlive() || _collider.IsTouchingLayers(LayerMask.GetMask("OutMapCollider")))
         {
-            _isAlive = false;
+            _healthSystem.SetPlayerIsDead(true);
             // Adiciona uma morte mais dramática.
             _rigidBody.velocity = new Vector2(5f, 5f);
             transform.Rotate(0f, 0f, 90f);
