@@ -152,7 +152,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   runSpeed: 5
-  jumpSpeed: 7
+  jumpSpeed: 8
   jumpEffect: {fileID: 8300000, guid: edebf3db781cf3042b45c5002e17c3da, type: 3}
 --- !u!50 &9186838004757330172
 Rigidbody2D:
