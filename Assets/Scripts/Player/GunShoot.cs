@@ -27,7 +27,7 @@ public class GunShoot : MonoBehaviour
     {
         if (_healthSystem.IsAlive() && Input.GetButtonDown("Fire1"))
         {
-            var bullet = Instantiate(_projectile, _firePoint.position, Quaternion.identity);
+            var bullet = Instantiate(_projectile, _firePoint.position, transform.rotation);
             var bulletRigidBody = bullet.GetComponent<Rigidbody2D>();
             bulletRigidBody.AddForce(_firePoint.right * _force, ForceMode2D.Impulse);
             SoundManager.PlaySound(_gunSoundEffect);
