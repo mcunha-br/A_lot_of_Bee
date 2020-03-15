@@ -52,17 +52,16 @@ public abstract class EnemyBase : MonoBehaviour {
         currentHealth -= damage;
 
         if (currentHealth <= 0) {
-            //SoundManager.PlaySound(sfxDeath);
+            SoundManager.PlaySound(sfxDeath);
             OnDeath();
+            currentHealth = health;
             gameObject.SetActive(false);
         } else
             StartCoroutine("BlinkEnemy");
-
-        Debug.Log(currentHealth);
     }
 
     protected IEnumerator BlinkEnemy() {
-        //SoundManager.PlaySound(sfxHit);
+        SoundManager.PlaySound(sfxHit);
         OnDamage();
 
         rend.color = Color.red;

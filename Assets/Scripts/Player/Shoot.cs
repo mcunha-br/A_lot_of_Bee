@@ -18,7 +18,5 @@ public class Shoot : MonoBehaviour {
             collision.GetComponent<EnemyBase>().ApplyDamage(strong);
             Destroy(gameObject);
         }
-
-        Debug.Log(collision.name);
     }
 }

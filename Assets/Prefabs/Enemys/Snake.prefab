@@ -51,9 +51,9 @@ MonoBehaviour:
   strong: 1
   health: 3
   startFollowPlayer: 1
-  sfxHit: {fileID: 0}
+  sfxHit: {fileID: 8300000, guid: 9908e5a511c87a9469b8715e1b72f1c4, type: 3}
   sfxAttack: {fileID: 0}
-  sfxDeath: {fileID: 0}
+  sfxDeath: {fileID: 8300000, guid: 5b9ac71373d5f584fa78654f729ef6d4, type: 3}
 --- !u!212 &706990513071594242
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -68,6 +68,7 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
