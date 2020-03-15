@@ -84,6 +84,7 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -213,8 +214,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.1180799, y: -0.08615327}
-  m_Size: {x: 0.53148985, y: 0.8260088}
+  m_Offset: {x: -0.1180799, y: -0.077739835}
+  m_Size: {x: 0.53148985, y: 0.8091819}
   m_Direction: 0
 --- !u!114 &1415195597
 MonoBehaviour:
