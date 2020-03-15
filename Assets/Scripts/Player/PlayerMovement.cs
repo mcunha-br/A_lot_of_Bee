@@ -17,6 +17,7 @@ public class PlayerMovement : MonoBehaviour
 	// Controles pra evitar que o personagem fique rodando infinitamente.
 	private bool _isAlreadyFacingRight = true;
 	private bool _isAlreadyFacingLeft = false;
+	private float _speed;
 
 	// Start is called before the first frame update
     void Start()
@@ -27,6 +28,7 @@ public class PlayerMovement : MonoBehaviour
         _healthSystem = GetComponent<HealthSystem>();
         _foregroundLayerMask = 1 << LayerMask.NameToLayer("Foreground");
         _waterLayerMask = 1 << LayerMask.NameToLayer("Water");
+		_speed = runSpeed;
     }
 
     // Update is called once per frame
@@ -82,5 +84,9 @@ public class PlayerMovement : MonoBehaviour
 	{
 		var hasHorizontalSpeed = Mathf.Abs(_rigidBody.velocity.x) > Mathf.Epsilon;
 		_animator.SetBool("isRunning", hasHorizontalSpeed);
+	}
+
+	public void InWater(bool inWater) {
+		runSpeed = (inWater) ? 2 : _speed;
 	}
 }
