@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 
@@ -92,5 +93,14 @@ public class PoolingManager : MonoBehaviour {
                 enemy.GetComponent<EnemyBase>().inWater = inWater;
             }
         }
+    }
+
+    private void OnDestroy()
+    {
+        bees.Clear();
+        chickens.Clear();
+        snakes.Clear();
+        scorpions.Clear();
+        ghosts.Clear();
     }
 }
